@@ -147,6 +147,120 @@ namespace UnitTestCustomList
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void Add_Remove_AllItems()
+        {
+            MyList<int> thing = new MyList<int>();
+            int value1 = 167;
+            int value2 = 234;
+            int value3 = 365;
+            int expected = 0;
+            int actual;
+            //Act
+            thing.Add(value1);
+            thing.Add(value2);
+            thing.Add(value3);
+            thing.Remove(value1);
+            thing.Remove(value2);
+            thing.Remove(value3);
+            actual = thing.Count;
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Remove_NonExistant_CountOf()
+        {
+            MyList<int> thing = new MyList<int>();
+            int value1 = 3;
+            int value2 = 4;
+            int value3 = 5;
+            int value4 = 700;
+            int expected = 3;
+            int actual;
+            //Act
+            thing.Add(value1);
+            thing.Add(value2);
+            thing.Add(value3);
+            thing.Remove(value4);
+            
+            actual = thing.Count;
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Remove_First_InDuplicate()
+        {
+            MyList<int> thing = new MyList<int>();
+            int value1 = 3;
+            int value2 = 3;
+            int value3 = 3;
+            int expected = 2;
+            int actual;
+            //Act
+            thing.Add(value1);
+            thing.Add(value2);
+            thing.Add(value3);
+            thing.Remove(value1);
+            actual = thing.Count;
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Remove_LastItem()
+        {
+            MyList<int> thing = new MyList<int>();
+            int value1 = 100;
+            int value2 = 200;
+            int value3 = 300;
+            int expected = 2;
+            int actual;
+            //Act
+            thing.Add(value1);
+            thing.Add(value2);
+            thing.Add(value3);
+            thing.Remove(value3);
+            actual = thing.Count;
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        public void Remove_FirstItem()
+        {
+            MyList<int> thing = new MyList<int>();
+            int value1 = 100;
+            int value2 = 200;
+            int value3 = 300;
+            int expected = 2;
+            int actual;
+            //Act
+            thing.Add(value1);
+            thing.Add(value2);
+            thing.Add(value3);
+            thing.Remove(value1);
+            actual = thing.Count;
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        public void Remove_No_item()
+        {
+            MyList<int> thing = new MyList<int>();
+            int value1 = 100;
+            int value2 = 200;
+            int value3 = 300;
+            int value4 = 400;
+            int expected = 3;
+            int actual;
+            //Act
+            thing.Add(value1);
+            thing.Add(value2);
+            thing.Add(value3);
+            thing.Remove(value4);
+            actual = thing.Count;
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
  
