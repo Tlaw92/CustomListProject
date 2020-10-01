@@ -114,6 +114,39 @@ namespace UnitTestCustomList
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void Add_Capacity_ToArrayIndex()
+        {
+            //Arrange
+            MyList<int> thing = new MyList<int>();
+            int value1 = 167;
+            int value2 = 234;
+            int value3 = 365;
+            int value4 = 425;
+            int value5 = 524;
+            int value6 = 626;
+            int value7 = 777;
+            int value8 = 824;
+            int value9 = 987;
+            int expected = 16;
+            int actual;
+            //Act
+            thing.Add(value1);
+            thing.Add(value2);
+            thing.Add(value3);
+            thing.Add(value4);
+            thing.Add(value5);
+            thing.Add(value6);
+            thing.Add(value7);
+            thing.Add(value8);
+            thing.Add(value9);
+
+            actual = thing.capacity;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
  

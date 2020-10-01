@@ -10,18 +10,34 @@ namespace CustomLists
     {
         static void Main(string[] args)
         {
-            MyList<int> thing = new MyList<int>();
 
-            List<int> flamingo = new List<int>();
-            flamingo.Add(1);
-            flamingo.Add(2);
-            flamingo.Add(3);
-            flamingo.Add(4);
-            flamingo.Add(5);
-            flamingo.Add(6);
-            flamingo.Add(7);
-            flamingo.Add(8);
-            flamingo.Add(9);
+            List<int> MicroSoftList = new List<int>();
+            MicroSoftList.Add(2);
+            //MicroSoftList.Count = 700;
+
+
+
+
+
+
+            MicroSoftList[0] = 7;
+
+            MyList<int> thing = new MyList<int>();
+            //thing.Add(2);
+            //int something = thing[0];
+            //thing[0] = 7;
+
+            thing.Add(167);
+            thing.Add(234);
+            thing.Add(365);
+            thing.Add(425);
+            thing.Add(524);
+            thing.Add(626);
+            thing.Add(777);
+            thing.Add(824);
+            thing.Add(987);
+            thing.RemoveAt(5);
+            
         }
     }
 }
