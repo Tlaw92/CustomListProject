@@ -26,7 +26,8 @@ namespace CustomLists
             //thing.Add(2);
             //int something = thing[0];
             //thing[0] = 7;
-
+            //thing.Remove(5);
+          
             thing.Add(167);
             thing.Add(234);
             thing.Add(365);
@@ -36,7 +37,7 @@ namespace CustomLists
             thing.Add(777);
             thing.Add(824);
             thing.Add(987);
-            thing.RemoveAt(5);
+            thing.Remove(234);
             
         }
     }

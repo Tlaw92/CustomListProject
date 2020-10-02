@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -82,21 +83,32 @@ namespace CustomLists
 
         public bool Remove(T itemToRemove)
         {
-            //capture the value //call find on itemToRemove
-            int index = Find(itemToRemove);
-            if (true)
+            bool foundItem = false;
+            T[] temporaryArray = new T[count];
+            for (int i = 0, j = 0; i < count; i++, j++)
             {
-                //find returns negative
-                return false;
+                //
+                if (_items[i].Equals(itemToRemove) && foundItem == false)
+                {
+                    foundItem = true;
+                    
+                    j--;
+                }
+                else
+                {
+                    temporaryArray[j] = _items[i];
+                    
+                }
+                
+                
             }
-            else
+            if (foundItem == true)
             {
-                //remove at index
-                return true;
+                count--;
             }
+            _items = temporaryArray;
+            return foundItem;
         }
-
-
 
     }
 }

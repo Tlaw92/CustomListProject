@@ -67,7 +67,7 @@ namespace UnitTestCustomList
         public void Add_5Things_Count5()
         {
             //Arrange
-            
+
             MyList<int> myList = new MyList<int>();
             int flamingo1 = 1;
             int flamingo2 = 2;
@@ -184,7 +184,7 @@ namespace UnitTestCustomList
             thing.Add(value2);
             thing.Add(value3);
             thing.Remove(value4);
-            
+
             actual = thing.Count;
             //Assert
             Assert.AreEqual(expected, actual);
@@ -250,16 +250,47 @@ namespace UnitTestCustomList
             int value2 = 200;
             int value3 = 300;
             int value4 = 400;
-            int expected = 3;
-            int actual;
+            bool expected = false;
+            bool actual;
             //Act
             thing.Add(value1);
             thing.Add(value2);
             thing.Add(value3);
-            thing.Remove(value4);
-            actual = thing.Count;
+
+            actual = thing.Remove(value4);
             //Assert
             Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Remove_All_item()
+        {
+            MyList<int> thing = new MyList<int>();
+            int value1 = 100;
+            bool expected = true;
+            bool actual;
+
+            //Act
+            thing.Add(value1);
+
+            actual = thing.Remove(value1);
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        public void Convert_To_String()
+        {
+            //Arrange
+            MyList<string> myList = new MyList<string>();
+            string phrase1 = "Hello World";
+            string phrase2 = "Goodbye World";           
+            string expected = ;
+            int actual;
+            //Act
+            myList.Add(value1);
+            myList.Add(value2);
+            actual = 
+            //Assert
+            //Assert.AreEqual(expected, actual);
         }
     }
 }
