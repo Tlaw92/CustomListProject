@@ -11,7 +11,7 @@ namespace CustomLists
         static void Main(string[] args)
         {
 
-            List<int> MicroSoftList = new List<int>();
+            List<int> MicroSoftList = new List<int>() { 1, 2, 3, 4, 5 };
             MicroSoftList.Add(2);
             //MicroSoftList.Count = 700;
 

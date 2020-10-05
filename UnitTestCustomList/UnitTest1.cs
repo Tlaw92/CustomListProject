@@ -276,21 +276,87 @@ namespace UnitTestCustomList
             //Assert
             Assert.AreEqual(expected, actual);
         }
-
-        public void Convert_To_String()
+        [TestMethod]
+        public void Convert_Chars_To_String()
         {
             //Arrange
-            MyList<string> myList = new MyList<string>();
-            string phrase1 = "Hello World";
-            string phrase2 = "Goodbye World";           
-            string expected = ;
+            MyList<char> myList = new MyList<char>();
+            char char1 = 'H';
+            char char2 = 'E';
+            char char3 = 'Y';
+            string expected = "HEY";
+            string actual;
+            //Act
+            myList.Add(char1);
+            myList.Add(char2);
+            myList.Add(char3);
+            actual = myList.ToString();
+            //Assert
+            Assert.AreEqual(expected, actual);
+            //Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Convert_Int_To_String()
+        {
+            //Arrange
+            MyList<int> myList = new MyList<int>();
+            int numb1 = 1;
+            int numb2 = 2;
+            int numb3 = 3;
+            string expected = "123";
+            string actual;
+            //Act
+            myList.Add(numb1);
+            myList.Add(numb2);
+            myList.Add(numb3);
+            actual = myList.ToString();
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Convert_Bool_To_String()
+        {
+            //Arrange
+            MyList<bool> myList = new MyList<bool>();
+            bool bool1 = true;
+            string expected = "True";
+            string actual;
+            //Act
+            myList.Add(bool1);
+            actual = myList.ToString();
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Add_Two_Strings_Together()
+        {
+            //Arange
+            MyList<int> myList = new MyList<int>();
+            int value1 = 1;
+            int value2 = 3;
+            int value3 = 5;
+
+            MyList<int> myList2 = new MyList<int>();
+            int value4 = 2;
+            int value5 = 4;
+            int value6 = 6;
+            int expected = 1,3,5,2,4,6;
             int actual;
             //Act
             myList.Add(value1);
             myList.Add(value2);
-            actual = 
+            myList.Add(value3);
+
+            myList2.Add(value4);
+            myList2.Add(value5);
+            myList2.Add(value6);
+
+            actual = myList + myList2
             //Assert
-            //Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual);
         }
     }
 }

@@ -1,14 +1,15 @@
 ﻿using System;
 using System.CodeDom.Compiler;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CustomLists
+namespace CustomLists 
 {
-    public class MyList<T>
+    public class MyList<T> : IEnumerable
     {
         private int count;
         public int capacity;
@@ -108,6 +109,24 @@ namespace CustomLists
             }
             _items = temporaryArray;
             return foundItem;
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            for (int i = 0; i < count; i++)
+            {
+                yield return _items[i];
+            }
+        }
+
+        public string ToString()
+        {
+            string convertedString = "";
+            for (int i = 0; i < count; i++)
+            {
+                convertedString += _items[i].ToString();
+            }
+            return convertedString;
         }
 
     }
